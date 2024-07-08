@@ -3,7 +3,7 @@ DOING TASK THAT'S ASSIGNED BY ENCRYPTIX AS PART OF THE PYTHON PROGRAMMING VIRTUA
 
 ##
 # TASK 1: TO-DO-LIST
-This project aims to create a To-Do List application using Python, allowing users to manage and organize their tasks efficiently. The application provides a command-line interface for users to create, update, and track their to-do lists.
+This project aims to create a To-Do List application using Python, allowing users to efficiently manage and organize their tasks. The application provides a command-line interface for users to create, update, and track their to-do lists.
 
 ## Key Features
 - Create and manage to-do lists
@@ -59,3 +59,21 @@ The code is structured to repeatedly prompt the user for input and perform calcu
 - Arithmetic Operations: Implements basic arithmetic operations with appropriate prompts and displays for results.
 
 ## 
+# TASK 3 PASSWORD GENERATOR
+This project is a simple password generator application written in Python, designed to create secure passwords based on user-specified criteria. The application provides a command-line interface for users to generate varying lengths and complex passwords.
+
+# Key Features
+- Generate passwords of user-specified lengths.
+- Choose between low, medium, and high complexity for the password.
+- Continuous generation until the user decides to quit.
+
+# Code Overview
+- User Input Handling: Prompts users to enter the desired password length and complexity level.
+- Password Generation: Creates a password using random ASCII characters, digits, and punctuation based on the chosen complexity.
+- Looping Mechanism: Uses a while True loop to continuously prompt the user until they decide to quit by entering 'end'.
+
+# Key Code Points
+- User Input: Utilizes input() to gather the password length and complexity from the user.
+- Character Sets: Uses the string module to access ASCII letters, digits, and punctuation.
+- Random Selection: Implements random.choice() to select characters for the password randomly.
+- Loop for Continuation: Continuously generates passwords until the user chooses to stop.
