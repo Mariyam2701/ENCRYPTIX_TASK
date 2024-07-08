@@ -1,0 +1,86 @@
+# Creating an empty list called tasks to store all the tasks.
+tasks = []
+
+##display_tasks: Defining a function called display_tasks() to display all the tasks in the list. 
+def display_tasks():
+    if tasks:                                   # If the list is not empty
+        print("To-Do List:")                    # Print the header
+        for i, task in enumerate(tasks, 1):     # Loop through the list
+            print(f"{i}. {task}")               # Print each task with its index
+    else:
+        print("To-Do List is empty.")           # Print a message if the list is empty
+        
+
+##add_tasks: Defining a function to add new tasks to the list.
+def add_task():
+    tasks_input = input("Enter tasks separated by commas: ")       
+    new_tasks = tasks_input.split(',')                   # Split the input into a list
+    for task in new_tasks:                                         
+        task = task.strip()                              # Remove whitespace
+        if task:                                         # If the task is not empty
+            tasks.append(task)                           # Add the task to the list
+            print(f"Task '{task}' added.")                         
+
+##update_tasks: Defining a function to update existing tasks in the list.
+def update_task():
+    display_tasks()                                      # Display the current tasks
+    if tasks:                                            # If the list is not empty
+        updates = []                                     # Create an empty list for updates
+        num_updates = int(input("Enter the number of tasks to update: "))     
+        for _ in range(num_updates):                     
+            index = int(input("Enter the task number to update: ")) - 1     # Get the task index
+            new_task = input("Enter the new task: ")                        # Get the new task
+            updates.append((index, new_task))                               # Add the update to the list
+        for index, new_task in updates:
+            if 0 <= index < len(tasks):                             # If the index is valid
+                old_task = tasks[index]                             # Get the old task                                     
+                tasks[index] = new_task                             # Update the task
+                print(f"Updated task {index + 1}: '{old_task}' to '{new_task}'")
+            else:
+                print(f"No task found at index {index + 1}")
+    else:
+        print("No tasks to update.")
+
+        
+##delelte_task: Defining a function to delete tasks from the list.
+def delete_task():
+    display_tasks()
+    if tasks:
+        tasks_input = input("Enter task numbers to delete, separated by commas: ")
+        try:
+            task_numbers = [int(num.strip()) for num in tasks_input.split(',')]   # Split the input into a list
+            task_numbers = sorted(task_numbers, reverse=True)                     # Sort the list in reverse order
+            for task_number in task_numbers:                                      # Loop through the task numbers
+                if 1 <= task_number <= len(tasks):                                # If the task number is valid
+                    removed_task = tasks.pop(task_number - 1)                     # Remove the task
+                    print(f"Task '{removed_task}' deleted.")
+                else:
+                    print(f"Task number {task_number} is invalid.")
+        except ValueError:
+            print("Please enter valid numbers.")
+    else:
+        print("No tasks to delete.")
+
+##Creating a menu that loops indefinitely, displaying the options and waiting for user input.        
+while True:
+    print("\nTo-Do List Menu")
+    print("1. Display Tasks")
+    print("2. Add Tasks")
+    print("3. Update Tasks")
+    print("4. Delete Tasks")
+    print("5. Exit")
+    choice = input("Choose an option (1-5): ")
+
+    if choice == "1":
+        display_tasks()               # Display the tasks
+    elif choice == "2":
+        add_task()                    # Add a task
+    elif choice == "3":
+        update_task()                 # Update a task
+    elif choice == "4":        
+        delete_task()                 # Delete a task
+    elif choice == "5":
+        print("Exiting the To-Do List application. Goodbye!")       # Print a goodbye message
+        break                          # Exit the loop
+    else:
+        print("Invalid choice. Please choose a valid option.")
