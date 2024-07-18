@@ -77,3 +77,35 @@ This project is a simple password generator application written in Python, desig
 - Character Sets: Uses the string module to access ASCII letters, digits, and punctuation.
 - Random Selection: Implements random.choice() to select characters for the password randomly.
 - Loop for Continuation: Continuously generates passwords until the user chooses to stop.
+- 
+
+# TASK 4: Rock-Paper-Scissors Game
+
+This is a command-line Rock-Paper-Scissors game built using Python. The game allows users to play against the computer, with the option to play multiple rounds or exit the game.
+
+Key Features
+
+- Play against the computer in a game of Rock-Paper-Scissors
+- Choose to play multiple rounds or exit the game
+- View the score after each round and at the end of the game
+
+How to Play
+
+1. Run the program and select "Yes" to play or "No" to exit.
+2. Choose your move by entering the corresponding number (1 for Rock, 2 for Paper, 3 for Scissor).
+3. The computer's move will be generated randomly.
+4. The game will display the moves and declare a winner or draw.
+5. The score will be updated and displayed after each round.
+6. The game will continue for 5 rounds or until you choose to exit.
+
+Code Overview
+
+The code uses a simple menu-driven interface and a while loop to keep the game running. The computer's move is generated using the random module. The game logic is implemented using conditional statements to determine the winner or draw.
+
+Key Code Points
+
+- The game uses a list l to store the possible moves.
+- The user's input is validated to ensure a valid move is selected.
+- The computer's move is generated using random.choice(l).
+- The game logic is implemented using conditional statements to determine the winner or draw.
+- The score is updated and displayed after each round.
